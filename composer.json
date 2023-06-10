@@ -1,0 +1,34 @@
+{
+    "name": "alexwebprog/laravel-boxberry",
+    "description": "Laravel Boxberry SDK",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Povarov",
+            "email": "povarovalexey@gmail.com",
+            "homepage": "https://github.com/AlexWebProg/"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": ">=6.3",
+        "psr/log": "*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Alexwebprog\\LaravelBoxberry\\Providers\\BoxberryServiceProvider"
+            ],
+            "aliases": {
+                "BoxberryClient": "Alexwebprog\\LaravelBoxberry\\Facades\\BoxberryClient"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Alexwebprog\\LaravelBoxberry\\": "src"
+        }
+    }
+}
