@@ -26,10 +26,9 @@ composer require alexwebprog/laravel-boxberry
 
 2. Настройке .env файл
 
-
-      BOXBERRY_API_URL=
-      BOXBERRY_TOKEN=
-      BOXBERRY_TIMEOUT=
+        BOXBERRY_API_URL=
+        BOXBERRY_TOKEN=
+        BOXBERRY_TIMEOUT=
 
 ### Базовое использование в Laravel
 ```php
