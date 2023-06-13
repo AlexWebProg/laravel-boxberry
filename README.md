@@ -222,7 +222,7 @@ class TestController extends Controller
              */
         }
         
-        catch (\WildTuna\BoxberrySdk\Exception\BoxBerryException $e) {
+        catch (BoxBerryException $e) {
             // Обработка ошибки вызова API BB
             // $e->getMessage(); текст ошибки 
             // $e->getCode(); http код ответа сервиса BB
