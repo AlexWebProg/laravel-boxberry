@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static getZipList() : array
  * @method static checkZip(int $index) : array
  * @method static getOrderStatuses(string $order_id, bool $all = false) : array
+ * @method static getMultipleOrdersStatuses(array $order_ids) : array
  * @method static getOrderServices(string $order_id) : bool|array
  * @method static getCourierCities() : array
  * @method static getPointsForParcels() : array

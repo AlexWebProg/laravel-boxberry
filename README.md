@@ -234,6 +234,92 @@ class TestController extends Controller
         }
         
     }
+    
+    // Отслеживание массива отправлений
+    public function getOrderStatuses()
+    {
+        try {
+            dump(BoxberryClient::getOrderStatuses([
+                'BIV255420272',
+                'BIV255420307',
+                'BIV255420297',
+                'BIV255420292',
+                'BIV255420287',
+                'BIV255420277',
+            ])); // По номерам заказов в интернет-магазине или номерам посылок в Boxberry
+            /*
+             Array
+            (
+                [BIV255420272] => Array
+                    (
+                        [lastStatusId] => 10
+                        [lastStatusName] => Получена информация о заказе. Отправление еще не передано на доставку в Boxberry
+                        [lastStatusDate] => 2023-06-26 17:16:37
+                        [storeDate] => 
+                        [deliveryDate] => 
+                    )
+            
+                [BIV255420277] => Array
+                    (
+                        [lastStatusId] => 10
+                        [lastStatusName] => Получена информация о заказе. Отправление еще не передано на доставку в Boxberry
+                        [lastStatusDate] => 2023-06-26 15:50:58
+                        [storeDate] => 
+                        [deliveryDate] => 
+                    )
+            
+                [BIV255420287] => Array
+                    (
+                        [lastStatusId] => 10
+                        [lastStatusName] => Получена информация о заказе. Отправление еще не передано на доставку в Boxberry
+                        [lastStatusDate] => 2023-06-26 15:50:58
+                        [storeDate] => 
+                        [deliveryDate] => 
+                    )
+            
+                [BIV255420292] => Array
+                    (
+                        [lastStatusId] => 10
+                        [lastStatusName] => Получена информация о заказе. Отправление еще не передано на доставку в Boxberry
+                        [lastStatusDate] => 2023-06-26 15:50:59
+                        [storeDate] => 
+                        [deliveryDate] => 
+                    )
+            
+                [BIV255420297] => Array
+                    (
+                        [lastStatusId] => 10
+                        [lastStatusName] => Получена информация о заказе. Отправление еще не передано на доставку в Boxberry
+                        [lastStatusDate] => 2023-06-26 15:51:00
+                        [storeDate] => 
+                        [deliveryDate] => 
+                    )
+            
+                [BIV255420307] => Array
+                    (
+                        [lastStatusId] => 10
+                        [lastStatusName] => Получена информация о заказе. Отправление еще не передано на доставку в Boxberry
+                        [lastStatusDate] => 2023-06-26 15:51:00
+                        [storeDate] => 
+                        [deliveryDate] => 
+                    )
+            
+            )
+            */
+        }
+        
+        catch (BoxBerryException $e) {
+            // Обработка ошибки вызова API BB
+            // $e->getMessage(); текст ошибки 
+            // $e->getCode(); http код ответа сервиса BB
+            // $e->getRawResponse(); // ответ сервера BB как есть (http request body)
+        }
+        
+        catch (\Exception $e) {
+            // Обработка исключения
+        }
+        
+    }
 
 }
 ```

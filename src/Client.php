@@ -236,6 +236,19 @@ class Client implements LoggerAwareInterface
     }
 
     /**
+     * Информация о статусах массива заказов
+     *
+     * @param array $order_ids - массив ID заказов магазина или трекномеров BB
+     * @return array
+     * @throws BoxBerryException|GuzzleException
+     */
+    public function getMultipleOrdersStatuses(array $order_ids) : array
+    {
+        $method = 'GetLastStatusData';
+        return $this->callApi('GET', $method, ['trackNumbers' => $order_ids]);
+    }
+
+    /**
      * Информация об услугах по отправлению
      *
      * @param string $order_id - ID заказа магазина или трекномер BB
